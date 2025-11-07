@@ -1,0 +1,59 @@
+# Build artifacts
+build/
+*.elf
+*.bin
+*.hex
+*.uf2
+*.dis
+*.map
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+*.cmake
+!CMakeLists.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# WAD files (don't commit game data)
+*.wad
+*.WAD
+wad/
+
+# Compiled Object files
+*.o
+*.obj
+*.a
+*.lib
+
+# Debugging
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+
+# Logs
+*.log
+
+# Pico SDK
+pico-sdk/
+
+# Temporary files
+*.tmp
+*.bak
+*.backup

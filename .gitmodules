@@ -1,0 +1,6 @@
+[submodule "lib/picodoom"]
+	path = lib/picodoom
+	url = https://github.com/kilograham/rp2040-doom.git
+[submodule "lib/pimoroni-pico"]
+	path = lib/pimoroni-pico
+	url = https://github.com/pimoroni/pimoroni-pico.git
