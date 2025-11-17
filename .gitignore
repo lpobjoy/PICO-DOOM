@@ -1,59 +1,375 @@
-# Build artifacts
+################################################################################
+# BUILD ARTIFACTS & COMPILED OBJECTS
+################################################################################
+
+# Build directory (CMake output)
 build/
+cmake-build-*/
+out/
+
+# Compiled binaries and objects
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
 *.elf
 *.bin
 *.hex
 *.uf2
 *.dis
 *.map
+*.d
 
-# CMake
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-*.cmake
-!CMakeLists.txt
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-
-# WAD files (don't commit game data)
-*.wad
-*.WAD
-wad/
-
-# Compiled Object files
-*.o
-*.obj
-*.a
-*.lib
-
-# Debugging
-*.dSYM/
+# Intermediate build artifacts
 *.su
 *.idb
 *.pdb
+*.dSYM/
+
+################################################################################
+# CMAKE & BUILD SYSTEM
+################################################################################
+
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+DartConfiguration.tcl
+install_manifest.txt
+
+# Generated cmake files (but keep CMakeLists.txt)
+!CMakeLists.txt
+!pico_sdk_import.cmake
+!pimoroni_pico_import.cmake
+
+################################################################################
+# IDE & EDITOR FILES
+################################################################################
+
+# VS Code
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/.history/
+.vscode/extensions.json
+!.vscode/
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim/Neovim
+*.swp
+*.swo
+*~
+.vim/
+.nvim/
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+################################################################################
+# GAME DATA & ASSETS
+################################################################################
+
+# Doom WAD files (copyrighted - don't commit)
+*.wad
+*.WAD
+*.lmp
+wad/
+assets/wads/
+
+# Other proprietary game data
+*.iwad
+*.pwad
+
+################################################################################
+# PYTHON & SCRIPTING
+################################################################################
 
 # Python
 __pycache__/
 *.py[cod]
+*.py[cdo]
 *$py.class
 .Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Python virtual environments
 venv/
+ENV/
 env/
+.venv
+pyvenv.cfg
 
-# Logs
+# Poetry
+poetry.lock
+pyproject.toml
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+################################################################################
+# DEPENDENCY & LIBRARY MANAGEMENT
+################################################################################
+
+# Pico SDK (may be cloned locally for development)
+# Uncomment if sdk is local; keep commented if using system/FetchContent
+# pico-sdk/
+
+# Package managers
+node_modules/
+package-lock.json
+yarn.lock
+
+# Conan package manager
+conan.lock
+conaninfo.txt
+
+################################################################################
+# SECRETS & SENSITIVE INFORMATION
+################################################################################
+
+# API keys, tokens, passwords (CRITICAL - NEVER COMMIT)
+.env
+.env.local
+.env.*.local
+secrets/
+.secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# AWS credentials
+~/.aws/credentials
+~/.aws/config
+
+# SSH keys
+*.pub
+id_rsa
+id_dsa
+id_ed25519
+
+# macOS Keychain
+.DS_Store/.Trashes
+Keychain/
+
+################################################################################
+# LOGGING & DIAGNOSTICS
+################################################################################
+
+# Log files
 *.log
+*.log.*
+logs/
+*.slog
 
-# Pico SDK
-pico-sdk/
+# Crash dumps
+crash/
+dumps/
+*.dmp
+
+# Debug information
+debug_output.txt
+gdb_history
+.gdb_history
+
+################################################################################
+# TEMPORARY & BACKUP FILES
+################################################################################
 
 # Temporary files
 *.tmp
+*.temp
+*.swp~
 *.bak
 *.backup
+*.orig
+*~
+
+# Accidental directories
+.tmp/
+tmp/
+temp/
+tempfiles/
+
+# OS-specific temp
+$RECYCLE.BIN/
+.Trash-*
+
+################################################################################
+# DOCUMENTATION BUILD ARTIFACTS
+################################################################################
+
+# Doxygen
+doxygen_sqlite3.db
+html/
+latex/
+
+# Sphinx
+docs/_build/
+
+# MkDocs
+site/
+
+################################################################################
+# DEVELOPMENT & PROFILING
+################################################################################
+
+# Profiling
+*.prof
+perf.data
+perf.data.old
+callgrind.out.*
+cachegrind.out.*
+
+# Valgrind
+*.valgrind
+
+# GDB scripts
+.gdbinit
+.gdbhistory
+
+# Coverage
+.coverage
+.coverage.*
+
+################################################################################
+# HARDWARE-SPECIFIC
+################################################################################
+
+# Serial monitor logs
+*.serial.log
+
+# Firmware backups
+*.uf2.backup
+*.bin.backup
+
+# Oscilloscope/Logic Analyzer captures
+*.vcd
+*.gtl
+*.gbl
+
+################################################################################
+# CI/CD & AUTOMATION
+################################################################################
+
+# GitHub Actions workflow artifacts
+.github/workflows/artifacts/
+
+# GitLab CI artifacts
+.gitlab-ci.yml.local
+
+# Local CI runs
+ci-output/
+ci-logs/
+
+################################################################################
+# MACOS SPECIFIC
+################################################################################
+
+# macOS junk
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Xcode (if used for cross-compilation testing)
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+
+################################################################################
+# WINDOWS SPECIFIC
+################################################################################
+
+# Windows shortcuts
+*.lnk
+
+# Visual Studio
+*.vs/
+.vs/
+*.sln.user
+
+################################################################################
+# UNIX-SPECIFIC
+################################################################################
+
+# Core dumps
+core
+core.*
+*.core
+
+# GCC coverage files
+*.gcda
+*.gcno
+*.gcov
+
+################################################################################
+# PROJECT-SPECIFIC EXCLUSIONS
+################################################################################
+
+# Don't commit large reference files unless essential
+references/
+datasheets/
+*.pdf  # Unless essential to project
+
+# Compiled documentation
+site/
+docs/_build/
+
+# Test outputs
+test_output/
+test_reports/
+
+################################################################################
+# KEEP THESE FILES (negation rules)
+################################################################################
+
+# Keep build documentation
+!docs/
+!docs/BUILDING.md
+!docs/PHASE3_RENDERING.md
+
+# Keep example/reference files
+!examples/
+
+# Keep project configuration
+!.gitignore
+!README.md
+!CMakeLists.txt
+!setup.sh
+!pimoroni_pico_import.cmake
+!pico_sdk_import.cmake
